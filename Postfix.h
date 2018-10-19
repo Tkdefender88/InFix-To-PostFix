@@ -20,42 +20,43 @@ using namespace std;
 
 class Postfix
 {
-	
-private:
-	string infix; // stores infix value
-  string postfix; // stores postfix value
-  double result; // stores calculation result.
-  
-  // Any private Methods should go here
 
-public:
-// Constructors 
+  private:
+	string infix;   // stores infix value
+	string postfix; // stores postfix value
+	double result;  // stores calculation result.
 
-/**
+	// Any private Methods should go here
+	string formPostfix(string);
+
+  public:
+	// Constructors
+
+	/**
  * Constructor to take astring representation of an 
  * algebraic expression 
- */ 
-Postfix(string infix);
+ */
+	Postfix(string infix);
 
-// Other public methods should go here
+	// Other public methods should go here
 
-/**
+	/**
  * Return a string representation of the 
  * algebraic expression in infix notation
  */
-string getInfix(); 
+	string getInfix();
 
-/**
+	/**
  * Return a string representation of the 
  * algebraic expresion in postfix notation
  */
-string getPostfix();
+	string getPostfix();
 
-/**
+	/**
  * Returns a double representing the 
  * evaluation of the algebraic expression
  */
-double getResult();
-}; 
+	double getResult();
+};
 
 #endif

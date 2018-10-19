@@ -12,11 +12,32 @@
 #define POSTFIX_IMP
 
 #include "Postfix.h"
+#include "LinkedStack.h"
 
-// Constructors implemented 
-Postfix::Postfix(std::string infix)
+// Constructors implemented
+
+Postfix::Postfix(std::string infix) : infix(infix)
 {
-  // should do something with the infix parameter value
+	// should do something with the infix parameter value
+}
+
+std::string Postfix::formPostfix(std::string)
+{
+	LinkedStack<std::string> stack = LinkedStack<std::string>();
+
+	for (char &c : infix)
+	{
+		switch (c)
+		{
+		case '+':
+		case '-':
+		case '*':
+		case '/':
+		case '^':
+			std::string topStack = stack.peek();
+			break;
+		}
+	}
 }
 
 // Privare methods implemented
@@ -25,18 +46,18 @@ Postfix::Postfix(std::string infix)
 
 std::string Postfix::getInfix()
 {
-  return "";
+	return infix;
 }
 
 std::string Postfix::getPostfix()
 {
-  return "";
+
+	return "";
 }
 
 double Postfix::getResult()
 {
-  return 0.00;
+	return 0.00;
 }
-  
-#endif
 
+#endif

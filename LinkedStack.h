@@ -15,27 +15,26 @@
 #include "Node.h"
 #include "PrecondViolatedExcep.h"
 
-
-template<class ItemType>
+template <class ItemType>
 class LinkedStack : public StackInterface<ItemType>
 {
-	
-private:
-	Node<ItemType>* topPtr; // Pointer to first node in the chain;
-                           // this node contains the stack's top
 
-public:
-// Constructors and destructor:
-	LinkedStack();                                     // Default constructor
-	LinkedStack(const LinkedStack<ItemType>& aStack);  // Copy constructor
-	virtual ~LinkedStack();                            // Destructor
-	
-// Stack operations:
+  private:
+	Node<ItemType> *topPtr; // Pointer to first node in the chain;
+							// this node contains the stack's top
+
+  public:
+	// Constructors and destructor:
+	LinkedStack();									  // Default constructor
+	LinkedStack(const LinkedStack<ItemType> &aStack); // Copy constructor
+	virtual ~LinkedStack();							  // Destructor
+
+	// Stack operations:
 	bool isEmpty() const;
-	bool push(const ItemType& newItem);
+	bool push(const ItemType &newItem);
 	bool pop();
 
-   /** @throw PrecondViolatedExcep if the stack is empty */
+	/** @throw PrecondViolatedExcep if the stack is empty */
 	ItemType peek() const throw(PrecondViolatedExcep);
 }; // end LinkedStack
 
