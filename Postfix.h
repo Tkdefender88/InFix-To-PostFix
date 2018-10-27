@@ -24,10 +24,17 @@ class Postfix
   private:
 	string infix;   // stores infix value
 	string postfix; // stores postfix value
-	double result;  // stores calculation result.
+	string seen;
+	double result; // stores calculation result.
 
 	// Any private Methods should go here
-	string formPostfix(string);
+	string formPostfix(string) throw(PrecondViolatedExcep);
+
+	//returns true if the first character has higher precendece than the second
+	bool higherPrecedence(const char, const char);
+	bool isOperand(const char) const;
+	bool isOperator(const char) const;
+	bool balancedParen(const string) const;
 
   public:
 	// Constructors
