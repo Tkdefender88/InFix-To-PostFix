@@ -35,7 +35,7 @@ class LinkedStack : public StackInterface<ItemType>
 	bool pop();
 
 	/** @throw PrecondViolatedExcep if the stack is empty */
-	ItemType peek() const throw(PrecondViolatedExcep);
+	ItemType peek() const;
 }; // end LinkedStack
 
 #include "LinkedStack.cpp"

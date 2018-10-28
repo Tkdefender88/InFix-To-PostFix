@@ -12,6 +12,7 @@
 #define POSTFIX_IMP
 
 #include <map>
+#include <stdexcept>
 
 #include "Postfix.h"
 #include "LinkedStack.h"
@@ -105,14 +106,14 @@ bool Postfix::balancedParen(const std::string infix) const
 
 // formPostfix takes in a parameter string in infix notation and
 // converts it into postix and returns the resulting string
-std::string Postfix::formPostfix(std::string infix) throw(PrecondViolatedExcep)
+std::string Postfix::formPostfix(std::string infix) 
 {
 	LinkedStack<char> stack = LinkedStack<char>();
 	std::string postfix = "";
 
 	if (!balancedParen(infix))
 	{
-		throw(PrecondViolatedExcep("Parentheses in expression not balanced"));
+		throw std::invalid_argument("Parentheses in expression not balanced");
 	}
 	//goes through every character in the infix string
 	for (char c : infix)
@@ -173,7 +174,7 @@ std::string Postfix::formPostfix(std::string infix) throw(PrecondViolatedExcep)
 		}
 		else
 		{
-			throw(PrecondViolatedExcep("encountered character that was not an operator or operand"));
+			throw std::invalid_argument("encountered character that was not an operator or operand");
 		}
 	}
 

@@ -28,7 +28,7 @@ class Postfix
 	double result; // stores calculation result.
 
 	// Any private Methods should go here
-	string formPostfix(string) throw(PrecondViolatedExcep);
+	string formPostfix(string);
 
 	//returns true if the first character has higher precendece than the second
 	bool higherPrecedence(const char, const char);

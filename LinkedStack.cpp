@@ -112,12 +112,12 @@ bool LinkedStack<ItemType>::pop()
 } // end pop
 
 template <class ItemType>
-ItemType LinkedStack<ItemType>::peek() const throw(PrecondViolatedExcep)
+ItemType LinkedStack<ItemType>::peek() const 
 {
 	// Enforce precondition
 	if (isEmpty())
 	{
-		throw(PrecondViolatedExcep("peek() called with empty stack."));
+		throw std::logic_error("peek() called with empty stack.");
 	}
 
 	// Stack is not empty; return top
