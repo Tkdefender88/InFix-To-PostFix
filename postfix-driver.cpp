@@ -17,16 +17,17 @@ using namespace std;
 
 int main()
 {
-  string infix = "";
-  cout << "Please give infix expression: ";
-  cin >> infix;
-  
-  Postfix pfix = Postfix(infix);
-  
-  cout << "Infix: " << pfix.getInfix() << endl;
-  cout << "Postfix: " << pfix.getPostfix() << endl;
-  cout << "Result: " << pfix.getResult() << endl;
-  
-  return 0;
-  
+	string infix = "";
+	cout << "Please give infix expression: ";
+	getline(cin, infix);
+
+	Postfix pfix = Postfix(infix);
+
+	cout << "Infix: " << pfix.getInfix() << endl;
+	cout << "Postfix: " << pfix.getPostfix() << endl;
+	cout << "Getting values: " << endl;
+	cout << "Result: " << pfix.getResult() << endl;
+
+	return 0;
+
 } // end main()
